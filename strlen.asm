@@ -9,7 +9,7 @@ section .text
     global strlen
 
 strlen:
-    push rbp,
+    push rbp
     mov rbp, rsp
     xor rax, rax
 
