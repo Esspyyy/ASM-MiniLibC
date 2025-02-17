@@ -13,7 +13,8 @@ SRCS	=	strlen.asm \
 			memset.asm \
 			memcpy.asm \
 			strcmp.asm \
-			memmove.asm
+			memmove.asm \
+			strncmp.asm
 
 OBJS	=	$(SRCS:.asm=.o)
 
