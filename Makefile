@@ -11,7 +11,8 @@ SRCS	=	strlen.asm \
 			strchr.asm \
 			strrchr.asm \
 			memset.asm \
-			memcpy.asm
+			memcpy.asm \
+			strcmp.asm
 
 OBJS	=	$(SRCS:.asm=.o)
 
