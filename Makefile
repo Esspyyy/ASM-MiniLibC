@@ -10,7 +10,8 @@ NAME	=	libasm.so
 SRCS	=	strlen.asm \
 			strchr.asm \
 			strrchr.asm \
-			memset.asm
+			memset.asm \
+			memcpy.asm
 
 OBJS	=	$(SRCS:.asm=.o)
 
