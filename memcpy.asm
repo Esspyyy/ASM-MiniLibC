@@ -24,5 +24,6 @@ copy_loop:
     jnz copy_loop
 
 end:
+    mov rsp, rbp
     pop rbp
     ret

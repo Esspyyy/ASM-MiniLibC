@@ -30,5 +30,6 @@ check_null:
     mov rax, rdi
 
 end:
+    mov rsp, rbp
     pop rbp
     ret

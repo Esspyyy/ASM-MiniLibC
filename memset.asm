@@ -23,6 +23,7 @@ fill_loop:
 
 end:
     mov rax, rdi
+    mov rsp, rbp
     pop rbp
     ret
 
