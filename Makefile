@@ -7,7 +7,8 @@
 
 NAME	=	libasm.so
 
-SRCS	=	strlen.asm
+SRCS	=	strlen.asm \
+			strchr.asm
 
 OBJS	=	$(SRCS:.asm=.o)
 
@@ -28,7 +29,7 @@ $(NAME): $(OBJS)
 	$(LD) $(LDFLAGS) -o $(NAME) $(OBJS)
 
 test: $(NAME)
-	gcc -o test main.c
+	gcc -g -o test main.c
 	LD_PRELOAD=./$(NAME) ./test
 
 clean:
