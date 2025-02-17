@@ -6,6 +6,7 @@
 ;;
 
 section .text
+    global memcpy
 
 memcpy:
     push rbp
