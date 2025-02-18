@@ -35,6 +35,6 @@ not_found:
     xor rax, rax
 
 end:
-    mov rbp, rsp
+    mov rsp, rbp
     pop rbp
     ret
