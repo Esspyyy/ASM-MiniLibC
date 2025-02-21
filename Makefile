@@ -19,7 +19,8 @@ SRCS	=	strlen.asm \
 			strstr.asm \
 			strpbrk.asm \
 			strcspn.asm \
-			ffs.asm
+			ffs.asm \
+			index.asm
 
 OBJS	=	$(SRCS:.asm=.o)
 

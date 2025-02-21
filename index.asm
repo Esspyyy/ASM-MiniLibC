@@ -9,6 +9,6 @@ section .text
     global index
     extern strchr
 
-; The following code is identical to strchr
+; The following function is identical to strchr
 index:
     jmp strchr    ; Direct jump to strchr implementation
