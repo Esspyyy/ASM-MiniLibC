@@ -5,6 +5,8 @@
 ;; syscall
 ;;
 
+BITS 64
+
 section .text
     global syscall
     extern __errno_location   ; Add reference to __errno_location function

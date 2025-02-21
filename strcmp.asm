@@ -5,6 +5,8 @@
 ;; strcmp
 ;;
 
+BITS 64
+
 section .text
     global strcmp
 

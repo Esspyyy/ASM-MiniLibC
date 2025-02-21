@@ -5,6 +5,7 @@
 ;; strchr
 ;;
 
+BITS 64
 
 section .text
     global strchr

@@ -5,6 +5,8 @@
 ;; strstr
 ;;
 
+BITS 64
+
 section .text
     global strstr
 
