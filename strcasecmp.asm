@@ -9,20 +9,25 @@ section .text
     global strcasecmp
 
 strcasecmp:
-    push rbp
+    ; Prologue
+    push rbp            ; Save frame pointer
     mov rbp, rsp
+    push rcx            ; Save rcx since we modify it
 
 compare_loop:
+    ; Load characters from strings
     mov al, byte [rdi]
     mov cl, byte [rsi]
 
+    ; Convert first character to lowercase if it's uppercase
     cmp al, 'A'
-    jb check_second_char
+    jb check_second_char    ; If not, got to next character
     cmp al, 'Z'
     ja check_second_char
     add al, 32
 
 check_second_char:
+    ; Convert second character to lowercase if it's uppercase
     cmp cl, 'A'
     jb compare_chars
     cmp cl, 'Z'
@@ -30,6 +35,7 @@ check_second_char:
     add cl, 32
 
 compare_chars:
+    ; Compare characters
     cmp al, cl
     jne not_equal
     cmp al, 0
@@ -39,16 +45,19 @@ compare_chars:
     jmp compare_loop
 
 not_equal:
+    ; Characters are not equal, calculate difference
     movzx rax, al
     movzx rcx, cl
     sub rax, rcx
     jmp end
 
 equal:
+    ; Characters are equal, return 0
     xor rax, rax
 
 end:
+    ; Epilogue
+    pop rcx            ; Restore rcx
     mov rsp, rbp
     pop rbp
     ret
-
