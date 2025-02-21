@@ -37,7 +37,7 @@ syscall:
 
     neg rax                 ; Get positive error code
     mov rcx, rax            ; Save error code in rcx
-    call __errno_location   ; Get pointer to errno by calling c function
+    call __errno_location wrt ..plt   ; Get pointer to errno by calling c function
     mov [rax], ecx          ; Set errno (int so 32bits)
     mov rax, -1             ; Return -1
 

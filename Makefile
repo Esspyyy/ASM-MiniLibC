@@ -28,10 +28,10 @@ SRCS	=	strlen.asm \
 OBJS	=	$(SRCS:.asm=.o)
 
 ASM	=	nasm
-ASMFLAGS=	-f elf64
+ASMFLAGS=	-f elf64 -DPIC       # PIC flag
 
 LD	=	ld
-LDFLAGS	=	-shared
+LDFLAGS	=	-shared -fPIC        # PIC flag for linking
 
 RM	=	rm -f
 

@@ -11,6 +11,10 @@ section .text
     global index
     extern strchr
 
-; The following function is identical to strchr
 index:
-    jmp strchr    ; Direct jump to strchr implementation
+    push rbp
+    mov rbp, rsp
+    call strchr wrt ..plt  ; Call strchr through PLT for PIC
+    mov rsp, rbp
+    pop rbp
+    ret
