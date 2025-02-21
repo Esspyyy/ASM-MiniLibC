@@ -12,9 +12,10 @@ section .text
     extern strrchr
 
 rindex:
+    ; Simply call strrchr
     push rbp
     mov rbp, rsp
-    call strrchr wrt ..plt  ; Call strchr through PLT for PIC
+    call strrchr wrt ..plt  ; Call strrchr through Procedure Linkage Table for Position Independant Code
     mov rsp, rbp
     pop rbp
     ret

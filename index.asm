@@ -12,9 +12,10 @@ section .text
     extern strchr
 
 index:
+    ; Simply calls strchr
     push rbp
     mov rbp, rsp
-    call strchr wrt ..plt  ; Call strchr through PLT for PIC
+    call strchr wrt ..plt  ; Call strchr through Procedure Linkage Table for Position Independant Code
     mov rsp, rbp
     pop rbp
     ret
