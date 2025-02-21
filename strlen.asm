@@ -9,17 +9,20 @@ section .text
     global strlen
 
 strlen:
-    push rbp
-    mov rbp, rsp
-    xor rax, rax
+    ; Prologue
+    push rbp            ; Save frame pointer
+    mov rbp, rsp       ; Create new frame
+
+    xor rax, rax       ; Initialize counter to 0
 
 count_loop:
-    cmp byte [rdi + rax], 0
-    je done
-    inc rax
-    jmp count_loop
+    cmp byte [rdi + rax], 0     ; Check for null terminator
+    je done                     ; Jump if end of string
+    inc rax                     ; Increment counter
+    jmp count_loop              ; Continue counting
 
 done:
-    mov rsp, rbp
-    pop rbp
+    ; Epilogue
+    mov rsp, rbp       ; Restore stack pointer
+    pop rbp            ; Restore frame pointer
     ret
