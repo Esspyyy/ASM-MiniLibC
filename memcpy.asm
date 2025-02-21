@@ -12,7 +12,7 @@ memcpy:
     ; Prologue: Save the base pointer and the rcx register
     push rbp
     mov rbp, rsp
-    push rcx
+    push rcx            ; Save rcx
 
     ; Set rax to the destination pointer (rdi)
     mov rax, rdi
