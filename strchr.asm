@@ -10,25 +10,27 @@ section .text
     global strchr
 
 strchr:
-    push rbp
-    mov rbp, rsp
+    ; Prologue
+    push rbp            ; Save frame pointer
+    mov rbp, rsp       ; Create new frame
 
 loop_start:
-    cmp byte [rdi], sil
-    je found
-    cmp byte [rdi], 0
-    je not_found
-    inc rdi
+    cmp byte [rdi], sil    ; Compare current char with target
+    je found               ; Jump if found
+    cmp byte [rdi], 0      ; Check for string end
+    je not_found           ; Jump if end reached
+    inc rdi                ; Move to next character
     jmp loop_start
 
 found:
-    mov rax, rdi
+    mov rax, rdi           ; Return pointer to found character
     jmp end
 
 not_found:
-    xor rax, rax
+    xor rax, rax           ; Return NULL
 
 end:
-    mov rsp, rbp
-    pop rbp
+    ; Epilogue
+    mov rsp, rbp          ; Restore stack pointer
+    pop rbp               ; Restore frame pointer
     ret
