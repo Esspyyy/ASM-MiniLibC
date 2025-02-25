@@ -9,6 +9,7 @@ BITS 64
 
 section .text
     global strrchr
+    global rindex
 
 rindex:
 strrchr:

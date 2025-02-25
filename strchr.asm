@@ -9,6 +9,7 @@ BITS 64
 
 section .text
     global strchr
+    global index
 
 index:
 strchr:
