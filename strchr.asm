@@ -10,6 +10,7 @@ BITS 64
 section .text
     global strchr
 
+index:
 strchr:
     ; Prologue
     push rbp            ; Save frame pointer

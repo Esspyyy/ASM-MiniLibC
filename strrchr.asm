@@ -10,6 +10,7 @@ BITS 64
 section .text
     global strrchr
 
+rindex:
 strrchr:
     ; Prologue
     push rbp

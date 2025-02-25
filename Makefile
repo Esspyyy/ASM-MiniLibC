@@ -20,8 +20,6 @@ SRCS	=	strlen.asm \
 			strpbrk.asm \
 			strcspn.asm \
 			ffs.asm \
-			index.asm \
-			rindex.asm \
 			memfrob.asm \
 			syscall.asm	\
 			strfry.asm
