@@ -30,11 +30,11 @@ strfry:
     test r13, r13 ; Check if string empty
     jz end ; If so, return
 
-    ; Set random seed
-    xor rdi, rdi ; Set rdi to NULL to pass as argument to time()
-    call time wrt ..plt
-    mov rdi, rax ; Retrieve time result
-    call srand wrt ..plt
+;     ; Set random seed
+;     xor rdi, rdi ; Set rdi to NULL to pass as argument to time()
+;     call time wrt ..plt
+;     mov rdi, rax ; Retrieve time result
+;     call srand wrt ..plt
 
 swapping_loop:
     ; Fisher-Yates (Knuth) shuffle algorithm ;)
