@@ -21,7 +21,6 @@ SRCS	=	strlen.asm \
 			strcspn.asm \
 			ffs.asm \
 			memfrob.asm \
-			syscall.asm	\
 			strfry.asm
 
 OBJS	=	$(SRCS:.asm=.o)
